@@ -1,0 +1,21 @@
+general:
+        setup_name: remo
+        compute_time: "00:08:00"
+        initial_date: '2001-01-01'
+        final_date: '2001-03-31'
+        base_dir: "/work/ch0636/g3000446/remo-mistral-run/"
+        nyear: 0
+        nmonth: 1
+        use_venv: False
+
+remo:
+        version: 2.0
+        model_dir: "/work/ch0636/g300046/model_codes/remo-2015/"
+        pool_dir: "/pool/data/remo"
+        res: EUR-11
+        lresume: 0
+        restart_rate: 1
+        restart_first: 1
+        restart_unit: 'm'
+        post_processing: 0
+
