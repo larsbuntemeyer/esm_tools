@@ -1,0 +1,42 @@
+# REMO YAML CONFIGURATION FILE
+# #
+
+model: remo
+type: atmosphere      # atmosphere, ocean, etc.
+version: "2015"
+
+
+available_versions:
+    - "2015"
+
+
+git-repository: "https://git.gerics.de/REMO/REMO_MPI"
+branch: remo2015_v2_mpi
+install_bins: "libs/rremo"
+comp_command: cd build; make mistral; cd ..
+clean_command: cd build; make clean_all; cd ..
+
+executable: rremo
+
+setup_dir: "${model_dir}"
+bin_dir: "${setup_dir}/bin"
+
+
+choose_computer.name:
+        mistral:
+                add_compiletime_environment_changes:
+                        add_module_actions:
+                                - "unload intelmpi"
+                                - "load bullxmpi_mlx/bullxmpi_mlx-1.2.9.2"
+
+
+metadata:
+        Institute: Climate Service Center Germany
+        Description:
+                Hydrostatic regional climate model
+        Authors: Lars Buntemeyer (lars.buntemeye@hzg.de), Kevin Sieck (kevin.sieck@awi.de)
+        Website:
+                https://www.remo-rcm.de
+        License:
+                Please make sure you have a licence to use REMO. In case you are unsure,
+                please contact kevin.sieck@hzg.de ...
